@@ -1,9 +1,11 @@
 /**
  * Arduino Starter Project #2 - Love-o-Meter
- * Users a TMP36 sensor to detect temperature, then microcontroller logic uses
+ * Uses a TMP36 sensor to detect temperature, then microcontroller logic uses
  * TMP36's analog input to control 3 LEDs.
  *
  * Video at https://www.youtube.com/watch?v=8UcjhftcKxo
+ *
+ * Author: Mike Sukmanowsky <mike.sukmanowsky@gmail.com>
  */
 
 /* Constants */
@@ -59,18 +61,22 @@ void loop() {
   float temperature = sensorToCelsius(sensorVal);
 
   if (temperature < temp_baseline) {
+    // All LEDs off
     digitalWrite(2, LOW);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
   } else if (temperature >= temp_baseline && temperature < temp_baseline + FIRST_THRESHOLD) {
+    // One LED on
     digitalWrite(2, HIGH);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
   } else if (temperature >= temp_baseline + FIRST_THRESHOLD && temperature < temp_baseline + SECOND_THRESHOLD) {
+    // Two LEDs on
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
     digitalWrite(4, LOW);
   } else if (temperature >= temp_baseline + SECOND_THRESHOLD) {
+    // Three LEDs on
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
     digitalWrite(4, HIGH);
