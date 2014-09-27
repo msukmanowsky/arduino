@@ -4,7 +4,7 @@
  * consecutive LEDs, if not, display only a single LED. Three LEDs are intended
  * to be green, yellow red.
  *
- * Video at https://www.youtube.com/watch?v=8UcjhftcKxo
+ * Video at https://www.youtube.com/watch?v=ZcSfFx3W02o
  *
  * Author: Mike Sukmanowsky <mike.sukmanowsky@gmail.com>
  */
